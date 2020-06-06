@@ -3,6 +3,7 @@ import path from 'path';
 import cors from 'cors';
 import routes from './routes';
 import { errors} from 'celebrate';
+import 'dotenv/config';
 
 const app = express();
 app.use(cors())
@@ -16,5 +17,5 @@ app.use(errors());
 
 
 app.listen(3333,()=>{
-   console.log('Servidor executando!')
+   console.log(process.env.APP_URL)
 });
